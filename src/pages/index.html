@@ -1,0 +1,61 @@
+<section class="hero">
+  <img class="hero__img" src="{{root}}assets/img/living-crystal.jpg" alt="Гостиная в стиле ар-деко с хрустальной люстрой" fetchpriority="high">
+  <div class="hero__body">
+    {{monogram}}
+    <p class="hero__eyebrow">Дизайн интерьеров · с {{since}} года</p>
+    <h1>Интерьеры <em>в стиле</em> ар-деко</h1>
+    <a class="btn btn--light" href="{{root}}portfolio.html">Смотреть проекты</a>
+  </div>
+  <div class="hero__bar">
+    <span>{{geo}}</span>
+    <a href="{{root}}contacts.html">Обсудить проект →</a>
+  </div>
+</section>
+
+<section class="intro wrap">
+  {{fan}}
+  <p class="intro__text reveal">Создаём дома с характером: выверенная геометрия, благородные материалы и свет, который работает как украшение. Ар-деко для нас — не музейный стиль, а <em>способ сделать повседневность торжественной</em>.</p>
+  <ul class="stats reveal">
+    <li><b>{{years}}</b><span>лет практики</span></li>
+    <li><b>{{since}}</b><span>год основания</span></li>
+    <li><b>20</b><span>проектов в портфолио</span></li>
+  </ul>
+</section>
+
+<section class="section">
+  <div class="wrap section__head">
+    <div><p class="eyebrow">Портфолио</p><h2>Избранные проекты</h2></div>
+    <a class="link" href="{{root}}portfolio.html">Все проекты →</a>
+  </div>
+  <div class="strip" tabindex="0" aria-label="Избранные проекты, прокрутка по горизонтали">
+    {{projects_strip}}
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap split">
+    <figure class="arch reveal"><img src="{{root}}assets/img/detail-teal-chair.jpg" alt="Бархатное кресло-ракушка цвета морской волны" loading="lazy"></figure>
+    <div class="split__text">
+      <p class="eyebrow">Подход</p>
+      <h2>Роскошь — это точность</h2>
+      <p>Каждый проект начинается с того, как вы живёте: где пьёте кофе, как принимаете гостей, что хочется видеть, просыпаясь. Из этого вырастает планировка, а уже затем — стиль.</p>
+      <p>Мы любим симметрию, скруглённые линии, камень, латунь и бархат. И следим, чтобы всё это было удобно каждый день, а не только красиво на фотографии.</p>
+      <a class="link" href="{{root}}about.html">О дизайнере →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap section__head">
+    <div><p class="eyebrow">Услуги</p><h2>От идеи до последней вазы</h2></div>
+    <a class="link" href="{{root}}services.html">Подробнее об услугах →</a>
+  </div>
+  <ol class="wrap svcs">{{services_short}}</ol>
+</section>
+
+<section class="section section--sand">
+  <div class="wrap section__head"><div><p class="eyebrow">Как мы работаем</p><h2>Пять шагов к готовому интерьеру</h2></div></div>
+  <ol class="wrap steps">{{process}}</ol>
+</section>
+
+{{cta}}
