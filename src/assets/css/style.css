@@ -269,13 +269,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .frame--arch img { aspect-ratio: 4 / 5; border-radius: 999px 999px 0 0; }
 .deco-rule { display: flex; align-items: center; gap: 18px; margin-top: clamp(40px, 5vw, 64px); color: var(--brass); }
 .deco-rule::before, .deco-rule::after { content: ''; flex: 1; height: 1px; background: currentColor; opacity: .7; }
-.deco-rule .fan { width: 72px; color: inherit; }
+.deco-rule .fan { width: 72px; color: var(--accent-bright); }
 .deco-rule i { width: 7px; height: 7px; background: var(--accent); transform: rotate(45deg); flex: none; }
 .deco-rule .link { color: var(--ink); }
-.sunburst { position: absolute; left: 50%; bottom: -1px; width: min(900px, 120vw); transform: translateX(-50%); color: var(--brass); opacity: .22; pointer-events: none; }
-.cta { position: relative; overflow: hidden; }
-.cta__in { position: relative; z-index: 1; }
-.cta .fan { color: var(--brass); }
 
 /* ===== Появление при прокрутке ===== */
 .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
