@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru" data-palette="aqua">
+<html lang="ru">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{root}}assets/css/style.css">
-<script>document.documentElement.classList.add('js');try{var p=localStorage.getItem('palette');if(p)document.documentElement.dataset.palette=p}catch(e){}</script>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body class="{{bodyClass}}">
 <a class="skip" href="#main">К содержанию</a>
@@ -53,13 +53,6 @@
   </div>
   <div class="wrap footer__bottom"><span>© {{brand}}, {{since}}–2026</span><span>Фотографии на сайте временные</span></div>
 </footer>
-
-<!-- Временный переключатель палитры: убрать после выбора цвета -->
-<div class="palette" role="group" aria-label="Палитра (временно)">
-  <span>Акцент</span>
-  <button data-palette="aqua" title="Аквамарин"><i style="background:#24766F"></i>Аквамарин</button>
-  <button data-palette="brass" title="Латунь"><i style="background:#8F6F3B"></i>Латунь</button>
-</div>
 
 <script src="{{root}}assets/js/main.js" defer></script>
 </body>

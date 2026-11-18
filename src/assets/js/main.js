@@ -70,17 +70,4 @@
       note.textContent = 'Открываем почтовую программу для отправки заявки…';
     });
   }
-
-  // Временный переключатель палитры
-  const root = document.documentElement;
-  const buttons = document.querySelectorAll('.palette button');
-  const mark = () => buttons.forEach((b) => b.classList.toggle('is-active', b.dataset.palette === root.dataset.palette));
-  buttons.forEach((b) =>
-    b.addEventListener('click', () => {
-      root.dataset.palette = b.dataset.palette;
-      try { localStorage.setItem('palette', b.dataset.palette); } catch (e) {}
-      mark();
-    })
-  );
-  mark();
 })();

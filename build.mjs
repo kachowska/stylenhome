@@ -26,6 +26,23 @@ function fan() {
   return `<svg class="fan" viewBox="0 0 120 62" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1">${rays.join('')}${arcs.join('')}</svg>`;
 }
 
+// Ступенчатый уголок
+function corner(pos) {
+  return `<svg class="corner corner--${pos}" viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1"><path d="M1 120V1h119"/><path d="M13 96V13h83"/><path d="M25 72V25h47"/><path d="M37 48V37h11" /><rect x="-4" y="-4" width="8" height="8" transform="translate(49 49) rotate(45)" fill="currentColor" stroke="none"/></svg>`;
+}
+
+// Большое «восходящее солнце» для тёмного блока
+function sunburst() {
+  const rays = [];
+  for (let a = 0; a <= 180; a += 6) {
+    const r = (a * Math.PI) / 180;
+    const inner = a % 12 === 0 ? 60 : 110;
+    rays.push(`<line x1="${(300 - inner * Math.cos(r)).toFixed(1)}" y1="${(300 - inner * Math.sin(r)).toFixed(1)}" x2="${(300 - 296 * Math.cos(r)).toFixed(1)}" y2="${(300 - 296 * Math.sin(r)).toFixed(1)}"/>`);
+  }
+  const arcs = [296, 200, 110, 60].map((r) => `<path d="M${300 - r} 300 A${r} ${r} 0 0 1 ${300 + r} 300"/>`);
+  return `<svg class="sunburst" viewBox="0 0 600 302" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1">${rays.join('')}${arcs.join('')}</svg>`;
+}
+
 function monogram() {
   return `<svg class="monogram" viewBox="0 0 80 104" aria-hidden="true" fill="none" stroke="currentColor"><path d="M4 100V40a36 36 0 0 1 72 0v60z" stroke-width="1.2"/><path d="M10 100V40a30 30 0 0 1 60 0v60" stroke-width=".6"/><text x="40" y="70" text-anchor="middle" fill="currentColor" stroke="none" font-family="Cormorant Garamond, serif" font-size="30" letter-spacing="1">${esc(site.monogram)}</text></svg>`;
 }
@@ -39,6 +56,7 @@ const card = (p, root, i) => `
 
 const CTA = `
 <section class="cta">
+  {{sunburst}}
   <div class="wrap cta__in">
     {{fan}}
     <h2>Расскажите о вашем доме</h2>
@@ -60,6 +78,9 @@ const tokens = (root) => ({
   phone_href: site.phone.replace(/[^+\d]/g, ''),
   email: esc(site.email),
   fan: fan(),
+  corner_tr: corner('tr'),
+  corner_bl: corner('bl'),
+  sunburst: sunburst(),
   monogram: monogram(),
   projects_count: projects.length,
   projects_strip: projects
