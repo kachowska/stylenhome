@@ -20,6 +20,12 @@
   burger.addEventListener('click', () => setMenu(!nav.classList.contains('is-open')));
   document.addEventListener('keydown', (e) => e.key === 'Escape' && setMenu(false));
 
+  // Нижняя панель на телефоне: появляется после первого экрана
+  const mbar = document.getElementById('mbar');
+  const onBar = () => mbar.classList.toggle('is-on', window.scrollY > 320);
+  onBar();
+  window.addEventListener('scroll', onBar, { passive: true });
+
   // Появление блоков
   const items = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {

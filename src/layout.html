@@ -24,6 +24,7 @@
       <a href="{{root}}about.html"{{on_about}}>О дизайнере</a>
       <a href="{{root}}contacts.html"{{on_contacts}}>Контакты</a>
       <a class="btn btn--sm nav__cta" href="{{root}}contacts.html">Обсудить проект</a>
+      <div class="nav__extra">{{fan}}<a href="tel:{{phone_href}}">{{phone}}</a><a href="mailto:{{email}}">{{email}}</a><span class="geo">{{geo}}</span></div>
     </nav>
     <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
   </div>
@@ -53,6 +54,8 @@
   </div>
   <div class="wrap footer__bottom"><span>© {{brand}}, {{since}}–2026</span><span>Фотографии на сайте временные</span></div>
 </footer>
+
+<div class="mbar" id="mbar"><a href="tel:{{phone_href}}">Позвонить</a><a class="mbar__main" href="{{root}}contacts.html">Обсудить проект</a></div>
 
 <script src="{{root}}assets/js/main.js" defer></script>
 </body>
